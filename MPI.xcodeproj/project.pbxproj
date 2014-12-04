@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8CD5DF3E18E1DFCE00319D84 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CD5DF3D18E1DFCE00319D84 /* main.c */; };
+		8CB8C841190C52C500B8595C /* diccionario.c in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8C840190C52C500B8595C /* diccionario.c */; };
 		8CD5DF4018E1DFCE00319D84 /* MPI.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8CD5DF3F18E1DFCE00319D84 /* MPI.1 */; };
+		8CD5DF4718E1E7D500319D84 /* libmpi.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD5DF4618E1E7D500319D84 /* libmpi.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +26,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8CAF10BD18EDD1AF00F5EE19 /* par_impar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = par_impar.c; sourceTree = "<group>"; };
+		8CAF10BF18EDD43500F5EE19 /* integral_pi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = integral_pi.c; sourceTree = "<group>"; };
+		8CAF10C118EDDA9E00F5EE19 /* promedio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = promedio.c; sourceTree = "<group>"; };
+		8CAF10C318EDDB7200F5EE19 /* factorial.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = factorial.c; sourceTree = "<group>"; };
+		8CAF10C518EDDE1700F5EE19 /* promedio_colectiva.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = promedio_colectiva.c; sourceTree = "<group>"; };
+		8CB8C840190C52C500B8595C /* diccionario.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = diccionario.c; sourceTree = "<group>"; };
+		8CCE40C318F6FE4E001756A7 /* examen_punto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = examen_punto.c; sourceTree = "<group>"; };
+		8CCE40C718F70ADF001756A7 /* examen_colectiva.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = examen_colectiva.c; sourceTree = "<group>"; };
+		8CCE40C918F70D52001756A7 /* examen_colectiva2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = examen_colectiva2.c; sourceTree = "<group>"; };
 		8CD5DF3A18E1DFCE00319D84 /* MPI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MPI; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD5DF3D18E1DFCE00319D84 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		8CD5DF3F18E1DFCE00319D84 /* MPI.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MPI.1; sourceTree = "<group>"; };
+		8CD5DF4618E1E7D500319D84 /* libmpi.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpi.1.dylib; path = ../../../../../usr/local/lib/libmpi.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD5DF4718E1E7D500319D84 /* libmpi.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +56,7 @@
 		8CD5DF3118E1DFCE00319D84 = {
 			isa = PBXGroup;
 			children = (
+				8CD5DF4618E1E7D500319D84 /* libmpi.1.dylib */,
 				8CD5DF3C18E1DFCE00319D84 /* MPI */,
 				8CD5DF3B18E1DFCE00319D84 /* Products */,
 			);
@@ -61,7 +74,16 @@
 			isa = PBXGroup;
 			children = (
 				8CD5DF3D18E1DFCE00319D84 /* main.c */,
+				8CAF10BD18EDD1AF00F5EE19 /* par_impar.c */,
+				8CAF10BF18EDD43500F5EE19 /* integral_pi.c */,
+				8CAF10C118EDDA9E00F5EE19 /* promedio.c */,
+				8CAF10C518EDDE1700F5EE19 /* promedio_colectiva.c */,
+				8CCE40C318F6FE4E001756A7 /* examen_punto.c */,
+				8CAF10C318EDDB7200F5EE19 /* factorial.c */,
 				8CD5DF3F18E1DFCE00319D84 /* MPI.1 */,
+				8CCE40C718F70ADF001756A7 /* examen_colectiva.c */,
+				8CCE40C918F70D52001756A7 /* examen_colectiva2.c */,
+				8CB8C840190C52C500B8595C /* diccionario.c */,
 			);
 			path = MPI;
 			sourceTree = "<group>";
@@ -117,7 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CD5DF3E18E1DFCE00319D84 /* main.c in Sources */,
+				8CB8C841190C52C500B8595C /* diccionario.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +217,12 @@
 		8CD5DF4418E1DFCE00319D84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -202,6 +230,12 @@
 		8CD5DF4518E1DFCE00319D84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -225,6 +259,7 @@
 				8CD5DF4518E1DFCE00319D84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

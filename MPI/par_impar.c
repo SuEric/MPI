@@ -1,8 +1,8 @@
 //
-//  main.c
+//  par_impar.c
 //  MPI
 //
-//  Created by sueric on 25/03/14.
+//  Created by sueric on 03/04/14.
 //  Copyright (c) 2014 SuEric. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 int main(int argc, char ** argv)
 {
-    MPI_Status st;
+    MPI_Status status;
     int miid, nps, num;
     
     /* all MPI programs start with MPI_Init */
@@ -23,24 +23,22 @@ int main(int argc, char ** argv)
     /* Comm_rank finds the rank of the process */
     MPI_Comm_rank(MPI_COMM_WORLD, &miid);
     
-    /* Print out a message */
-    //printf("Soy el procesador %d de %d\n", miid, nps);
-    
     if (miid == 0) {
-        printf("Dame un entero: \n");
+        printf("Ingrese número: \n");
         scanf("%d", &num);
-        num++;
         
-        MPI_Send(&num, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
-        MPI_Recv(&num, 1, MPI_INT, nps-1, 0, MPI_COMM_WORLD, &st);
+        MPI_Send(&num, 1, MPI_INT, 1, 0, MPI_COMM_WORLD); // Envía al segundo proceso
+        MPI_Recv(&num, 1, MPI_INT, nps-1, 0, MPI_COMM_WORLD, &status); // Recibe del último proceso
         
-        printf("El resultado es: %d", num);
+        printf("El resultado es: %d\n", num);
     }
     else {
-        MPI_Recv(&num, 1, MPI_INT, miid-1, 0, MPI_COMM_WORLD, &st);
-        num++;
+        MPI_Recv(&num, 1, MPI_INT, miid-1, 0, MPI_COMM_WORLD, &status);
         
-        MPI_Send(&num, 1, MPI_INT, (miid+1)%nps, 0, MPI_COMM_WORLD);
+        if ((miid % 2) == 0) num *= 5;
+        else num /= 2;
+        
+        MPI_Send(&num, 1, MPI_INT, (miid+1) % nps, 0, MPI_COMM_WORLD);
     }
     
     /* MPI Programs end with MPI Finalize; this is a weak synchronization point */
